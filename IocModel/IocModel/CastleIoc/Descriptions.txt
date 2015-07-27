@@ -1,0 +1,55 @@
+﻿Castle 容器 Ioc容器
+
+1、注册了一个Windsor容器；
+2、向容器中注册ILog服务，并告诉容器TextFileLog实现了这个服务，这里还设置了一个key的参数，后面可以通过这个参数来获取这个服务，
+   注册ILog时容器会发现这个服务依赖于其他的服务，它会自动去寻找，如果找不到这样的服务，则会抛出一个异常；
+3、向容器中注册ILogFormatter并告知TextFormatter实现了它；
+4、容器发现类的构造函数还需要另外一个参数target，这里指定了到BasicUsage.xml中去查找。
+
+需要添加对Castle.Windsor.dll、Castle.MicroKernel.dll的引用
+
+运行程序，可以看到输出的结果：
+[First Castle IOC Demo]log.txt
+
+生命周期管理，可以XML文档中配置管理实现的创建形式：
+
+我们通常创建一个组件的实例使用new关键字，这样每次创建出来的都是一个新的实例，如果想要组件只有一个实例，我们会使用Singleton模式。在Castle IOC中，它支持我们对于组件的实例进行控制，也就是说我们可以透明的管理一个组件拥有多少个实例。Castle IOC容器提供了如下几种生命处理方式：
+Singleton：一个组件只有一个实例被创建，所有请求的客户使用程序得到的都是同一个实例，同时这也是Castle IOC容器默认的一种处理方式。
+Transient：这种处理方式与我们平时使用new的效果是一样的，对于每次的请求得到的都是一个新的实例。
+PerThread：对于每一个线程来说是使用了Singleton，也就是每一个线程得到的都是同一个实例。
+Pooled：对象池的处理方式，对于不再需用的实例会保存到一个对象池中。
+ Custom：自定义的生命处理方式。
+我们可以通过以下两种方式来指定组件的生命处理方式，如果不指定，则为Singleton方式：
+1．使用配置文件
+<?xml version="1.0" encoding="utf-8" ?>
+
+<configuration>
+
+    <components>
+
+        <component id="comp1" lifestyle="transient">
+
+            <parameters>
+
+                <para>component1 para</para>
+
+            </parameters>
+
+        </component>>
+
+    </components>
+
+</configuration>
+2．使用Attribute特性
+[Transient]
+public class MyComponent
+{
+    public MyComponent()
+    {
+        //
+    }
+    public MyComponent(string _Str)
+    {
+        //
+    }
+}

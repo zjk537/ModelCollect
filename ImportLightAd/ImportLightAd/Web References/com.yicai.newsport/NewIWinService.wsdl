@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CheckPwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPwdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPwdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="customerId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveUserInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCustomerOffLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="customerId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCustomerOffLineResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetCustomerOn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="customerId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCustomerOnResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetContractList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContractListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContractListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContractDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="contractid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContractDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContractDetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKindList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKindListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKindListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeCategoryList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeCategoryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GeCategoryListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZipFileData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nKindID" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startTime" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endTime" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="strIndustryIDs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPlateIDs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNewslabelIDs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZipFileDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZipFileDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckPwdSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPwd" />
+  </wsdl:message>
+  <wsdl:message name="CheckPwdSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCustomerOffLineSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCustomerOffLine" />
+  </wsdl:message>
+  <wsdl:message name="SetCustomerOffLineSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCustomerOffLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCustomerOnSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCustomerOn" />
+  </wsdl:message>
+  <wsdl:message name="SetCustomerOnSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCustomerOnResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContractListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContractList" />
+  </wsdl:message>
+  <wsdl:message name="GetContractListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContractListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContractDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContractDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetContractDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContractDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKindListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKindList" />
+  </wsdl:message>
+  <wsdl:message name="GetKindListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKindListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeCategoryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GeCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="GeCategoryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GeCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientType" />
+  </wsdl:message>
+  <wsdl:message name="GetClientTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZipFileDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZipFileData" />
+  </wsdl:message>
+  <wsdl:message name="GetZipFileDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZipFileDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataTestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataTest" />
+  </wsdl:message>
+  <wsdl:message name="GetDataTestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPwdHttpGetIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPwdHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerInfoHttpGetIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserInfoHttpGetIn">
+    <wsdl:part name="customerId" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="Contact" type="s:string" />
+    <wsdl:part name="Fax" type="s:string" />
+    <wsdl:part name="oldPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SetCustomerOffLineHttpGetIn">
+    <wsdl:part name="customerId" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCustomerOffLineHttpGetOut" />
+  <wsdl:message name="SetCustomerOnHttpGetIn">
+    <wsdl:part name="customerId" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCustomerOnHttpGetOut" />
+  <wsdl:message name="GetContractListHttpGetIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContractListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetContractDetailHttpGetIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="contractid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContractDetailHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetKindListHttpGetIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetKindListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GeCategoryListHttpGetIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeCategoryListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetClientTypeHttpGetIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetClientTypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetDataTestHttpGetIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDataTestHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPwdHttpPostIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPwdHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerInfoHttpPostIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserInfoHttpPostIn">
+    <wsdl:part name="customerId" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="Contact" type="s:string" />
+    <wsdl:part name="Fax" type="s:string" />
+    <wsdl:part name="oldPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SetCustomerOffLineHttpPostIn">
+    <wsdl:part name="customerId" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCustomerOffLineHttpPostOut" />
+  <wsdl:message name="SetCustomerOnHttpPostIn">
+    <wsdl:part name="customerId" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCustomerOnHttpPostOut" />
+  <wsdl:message name="GetContractListHttpPostIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContractListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetContractDetailHttpPostIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="contractid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContractDetailHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetKindListHttpPostIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetKindListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GeCategoryListHttpPostIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeCategoryListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetClientTypeHttpPostIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetClientTypeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetDataTestHttpPostIn">
+    <wsdl:part name="account" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDataTestHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="NewIWinServiceSoap">
+    <wsdl:operation name="CheckPwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：用户登录&lt;br/&gt;【参数说明】&lt;br/&gt;account：用户名&lt;br/&gt;password：密码[传进来的密码不需要加密]&lt;br/&gt;ip:IP地址</wsdl:documentation>
+      <wsdl:input message="tns:CheckPwdSoapIn" />
+      <wsdl:output message="tns:CheckPwdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】： 获取用户信息&lt;br/&gt;【参数说明】&lt;br/&gt;account：用户名&lt;br/&gt;password：密码（传进来的密码不需要加密）&lt;br/&gt;ip:IP地址</wsdl:documentation>
+      <wsdl:input message="tns:GetCustomerInfoSoapIn" />
+      <wsdl:output message="tns:GetCustomerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：保存用户信息&lt;br/&gt;【参数说明】&lt;br/&gt;customerId：用户ID&lt;br/&gt;Password：新密码（密码等于空时不修改密码）&lt;br/&gt;Name：姓名&lt;br/&gt;Address：地址&lt;br/&gt;ZipCode：邮编&lt;br/&gt;Phone：电话&lt;br/&gt;Contact：联系人&lt;br/&gt;Fax：传真&lt;br/&gt;oldPassword：原密码（传进来的密码不需要加密）&lt;br/&gt;【返回值】：0:修改失败  1：修改成功  2：原密码不对</wsdl:documentation>
+      <wsdl:input message="tns:SaveUserInfoSoapIn" />
+      <wsdl:output message="tns:SaveUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOffLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：用户注销&lt;br/&gt;【参数说明】&lt;br/&gt;customerId：用户ID&lt;br/&gt;ip：IP地址</wsdl:documentation>
+      <wsdl:input message="tns:SetCustomerOffLineSoapIn" />
+      <wsdl:output message="tns:SetCustomerOffLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：记录用户在线情况&lt;br/&gt;【参数说明】&lt;br/&gt;customerId：用户ID&lt;br/&gt;ip：IP地址</wsdl:documentation>
+      <wsdl:input message="tns:SetCustomerOnSoapIn" />
+      <wsdl:output message="tns:SetCustomerOnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取用户合同列表&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码</wsdl:documentation>
+      <wsdl:input message="tns:GetContractListSoapIn" />
+      <wsdl:output message="tns:GetContractListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取用户合同信息&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码&lt;br/&gt;contractid：合同ID</wsdl:documentation>
+      <wsdl:input message="tns:GetContractDetailSoapIn" />
+      <wsdl:output message="tns:GetContractDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKindList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取权限内的栏目列表&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码</wsdl:documentation>
+      <wsdl:input message="tns:GetKindListSoapIn" />
+      <wsdl:output message="tns:GetKindListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeCategoryList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取权限内的行业属性数据列表&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码&lt;br/&gt;【返回值】：Sgin ：1：行业属性 2：板块属性 3：非行业属性（新闻标签）</wsdl:documentation>
+      <wsdl:input message="tns:GeCategoryListSoapIn" />
+      <wsdl:output message="tns:GeCategoryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取该客户允许的接收方式&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码&lt;br/&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetClientTypeSoapIn" />
+      <wsdl:output message="tns:GetClientTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZipFileData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：获取稿件XML文件以及相关附件，生成压缩包，讲压缩包文件转换为二进制数据返回&lt;br/&gt;
+                                   【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码[传进来的密码不需要加密]&lt;br/&gt;nKindID：栏目ID&lt;br/&gt;startTime：开始时间&lt;br/&gt;endTime：结束时间&lt;br/&gt;
+                                    strIndustryIDs：行业属性ID串[多个以逗号分割]&lt;br/&gt;strPlateIDs：概念板块ID串[多个以逗号分割]&lt;br/&gt;strNewslabelIDs：新闻标签ID串[多个以逗号分割]</wsdl:documentation>
+      <wsdl:input message="tns:GetZipFileDataSoapIn" />
+      <wsdl:output message="tns:GetZipFileDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">测试方法</wsdl:documentation>
+      <wsdl:input message="tns:GetDataTestSoapIn" />
+      <wsdl:output message="tns:GetDataTestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="NewIWinServiceHttpGet">
+    <wsdl:operation name="CheckPwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：用户登录&lt;br/&gt;【参数说明】&lt;br/&gt;account：用户名&lt;br/&gt;password：密码[传进来的密码不需要加密]&lt;br/&gt;ip:IP地址</wsdl:documentation>
+      <wsdl:input message="tns:CheckPwdHttpGetIn" />
+      <wsdl:output message="tns:CheckPwdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】： 获取用户信息&lt;br/&gt;【参数说明】&lt;br/&gt;account：用户名&lt;br/&gt;password：密码（传进来的密码不需要加密）&lt;br/&gt;ip:IP地址</wsdl:documentation>
+      <wsdl:input message="tns:GetCustomerInfoHttpGetIn" />
+      <wsdl:output message="tns:GetCustomerInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：保存用户信息&lt;br/&gt;【参数说明】&lt;br/&gt;customerId：用户ID&lt;br/&gt;Password：新密码（密码等于空时不修改密码）&lt;br/&gt;Name：姓名&lt;br/&gt;Address：地址&lt;br/&gt;ZipCode：邮编&lt;br/&gt;Phone：电话&lt;br/&gt;Contact：联系人&lt;br/&gt;Fax：传真&lt;br/&gt;oldPassword：原密码（传进来的密码不需要加密）&lt;br/&gt;【返回值】：0:修改失败  1：修改成功  2：原密码不对</wsdl:documentation>
+      <wsdl:input message="tns:SaveUserInfoHttpGetIn" />
+      <wsdl:output message="tns:SaveUserInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOffLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：用户注销&lt;br/&gt;【参数说明】&lt;br/&gt;customerId：用户ID&lt;br/&gt;ip：IP地址</wsdl:documentation>
+      <wsdl:input message="tns:SetCustomerOffLineHttpGetIn" />
+      <wsdl:output message="tns:SetCustomerOffLineHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：记录用户在线情况&lt;br/&gt;【参数说明】&lt;br/&gt;customerId：用户ID&lt;br/&gt;ip：IP地址</wsdl:documentation>
+      <wsdl:input message="tns:SetCustomerOnHttpGetIn" />
+      <wsdl:output message="tns:SetCustomerOnHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取用户合同列表&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码</wsdl:documentation>
+      <wsdl:input message="tns:GetContractListHttpGetIn" />
+      <wsdl:output message="tns:GetContractListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取用户合同信息&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码&lt;br/&gt;contractid：合同ID</wsdl:documentation>
+      <wsdl:input message="tns:GetContractDetailHttpGetIn" />
+      <wsdl:output message="tns:GetContractDetailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKindList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取权限内的栏目列表&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码</wsdl:documentation>
+      <wsdl:input message="tns:GetKindListHttpGetIn" />
+      <wsdl:output message="tns:GetKindListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeCategoryList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取权限内的行业属性数据列表&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码&lt;br/&gt;【返回值】：Sgin ：1：行业属性 2：板块属性 3：非行业属性（新闻标签）</wsdl:documentation>
+      <wsdl:input message="tns:GeCategoryListHttpGetIn" />
+      <wsdl:output message="tns:GeCategoryListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取该客户允许的接收方式&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码&lt;br/&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetClientTypeHttpGetIn" />
+      <wsdl:output message="tns:GetClientTypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">测试方法</wsdl:documentation>
+      <wsdl:input message="tns:GetDataTestHttpGetIn" />
+      <wsdl:output message="tns:GetDataTestHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="NewIWinServiceHttpPost">
+    <wsdl:operation name="CheckPwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：用户登录&lt;br/&gt;【参数说明】&lt;br/&gt;account：用户名&lt;br/&gt;password：密码[传进来的密码不需要加密]&lt;br/&gt;ip:IP地址</wsdl:documentation>
+      <wsdl:input message="tns:CheckPwdHttpPostIn" />
+      <wsdl:output message="tns:CheckPwdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】： 获取用户信息&lt;br/&gt;【参数说明】&lt;br/&gt;account：用户名&lt;br/&gt;password：密码（传进来的密码不需要加密）&lt;br/&gt;ip:IP地址</wsdl:documentation>
+      <wsdl:input message="tns:GetCustomerInfoHttpPostIn" />
+      <wsdl:output message="tns:GetCustomerInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：保存用户信息&lt;br/&gt;【参数说明】&lt;br/&gt;customerId：用户ID&lt;br/&gt;Password：新密码（密码等于空时不修改密码）&lt;br/&gt;Name：姓名&lt;br/&gt;Address：地址&lt;br/&gt;ZipCode：邮编&lt;br/&gt;Phone：电话&lt;br/&gt;Contact：联系人&lt;br/&gt;Fax：传真&lt;br/&gt;oldPassword：原密码（传进来的密码不需要加密）&lt;br/&gt;【返回值】：0:修改失败  1：修改成功  2：原密码不对</wsdl:documentation>
+      <wsdl:input message="tns:SaveUserInfoHttpPostIn" />
+      <wsdl:output message="tns:SaveUserInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOffLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：用户注销&lt;br/&gt;【参数说明】&lt;br/&gt;customerId：用户ID&lt;br/&gt;ip：IP地址</wsdl:documentation>
+      <wsdl:input message="tns:SetCustomerOffLineHttpPostIn" />
+      <wsdl:output message="tns:SetCustomerOffLineHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：记录用户在线情况&lt;br/&gt;【参数说明】&lt;br/&gt;customerId：用户ID&lt;br/&gt;ip：IP地址</wsdl:documentation>
+      <wsdl:input message="tns:SetCustomerOnHttpPostIn" />
+      <wsdl:output message="tns:SetCustomerOnHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取用户合同列表&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码</wsdl:documentation>
+      <wsdl:input message="tns:GetContractListHttpPostIn" />
+      <wsdl:output message="tns:GetContractListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取用户合同信息&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码&lt;br/&gt;contractid：合同ID</wsdl:documentation>
+      <wsdl:input message="tns:GetContractDetailHttpPostIn" />
+      <wsdl:output message="tns:GetContractDetailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKindList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取权限内的栏目列表&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码</wsdl:documentation>
+      <wsdl:input message="tns:GetKindListHttpPostIn" />
+      <wsdl:output message="tns:GetKindListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeCategoryList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取权限内的行业属性数据列表&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码&lt;br/&gt;【返回值】：Sgin ：1：行业属性 2：板块属性 3：非行业属性（新闻标签）</wsdl:documentation>
+      <wsdl:input message="tns:GeCategoryListHttpPostIn" />
+      <wsdl:output message="tns:GeCategoryListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">【方法描述】：根据帐号密码获取该客户允许的接收方式&lt;br/&gt;【参数说明】&lt;br/&gt;account：帐号&lt;br/&gt;password：密码&lt;br/&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetClientTypeHttpPostIn" />
+      <wsdl:output message="tns:GetClientTypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">测试方法</wsdl:documentation>
+      <wsdl:input message="tns:GetDataTestHttpPostIn" />
+      <wsdl:output message="tns:GetDataTestHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NewIWinServiceSoap" type="tns:NewIWinServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckPwd">
+      <soap:operation soapAction="http://tempuri.org/CheckPwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInfo">
+      <soap:operation soapAction="http://tempuri.org/GetCustomerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserInfo">
+      <soap:operation soapAction="http://tempuri.org/SaveUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOffLine">
+      <soap:operation soapAction="http://tempuri.org/SetCustomerOffLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOn">
+      <soap:operation soapAction="http://tempuri.org/SetCustomerOn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractList">
+      <soap:operation soapAction="http://tempuri.org/GetContractList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractDetail">
+      <soap:operation soapAction="http://tempuri.org/GetContractDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKindList">
+      <soap:operation soapAction="http://tempuri.org/GetKindList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeCategoryList">
+      <soap:operation soapAction="http://tempuri.org/GeCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientType">
+      <soap:operation soapAction="http://tempuri.org/GetClientType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZipFileData">
+      <soap:operation soapAction="http://tempuri.org/GetZipFileData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTest">
+      <soap:operation soapAction="http://tempuri.org/GetDataTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NewIWinServiceSoap12" type="tns:NewIWinServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckPwd">
+      <soap12:operation soapAction="http://tempuri.org/CheckPwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetCustomerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/SaveUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOffLine">
+      <soap12:operation soapAction="http://tempuri.org/SetCustomerOffLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOn">
+      <soap12:operation soapAction="http://tempuri.org/SetCustomerOn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractList">
+      <soap12:operation soapAction="http://tempuri.org/GetContractList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetContractDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKindList">
+      <soap12:operation soapAction="http://tempuri.org/GetKindList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeCategoryList">
+      <soap12:operation soapAction="http://tempuri.org/GeCategoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientType">
+      <soap12:operation soapAction="http://tempuri.org/GetClientType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZipFileData">
+      <soap12:operation soapAction="http://tempuri.org/GetZipFileData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTest">
+      <soap12:operation soapAction="http://tempuri.org/GetDataTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NewIWinServiceHttpGet" type="tns:NewIWinServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CheckPwd">
+      <http:operation location="/CheckPwd" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInfo">
+      <http:operation location="/GetCustomerInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserInfo">
+      <http:operation location="/SaveUserInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOffLine">
+      <http:operation location="/SetCustomerOffLine" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOn">
+      <http:operation location="/SetCustomerOn" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractList">
+      <http:operation location="/GetContractList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractDetail">
+      <http:operation location="/GetContractDetail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKindList">
+      <http:operation location="/GetKindList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeCategoryList">
+      <http:operation location="/GeCategoryList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientType">
+      <http:operation location="/GetClientType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTest">
+      <http:operation location="/GetDataTest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NewIWinServiceHttpPost" type="tns:NewIWinServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CheckPwd">
+      <http:operation location="/CheckPwd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInfo">
+      <http:operation location="/GetCustomerInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserInfo">
+      <http:operation location="/SaveUserInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOffLine">
+      <http:operation location="/SetCustomerOffLine" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerOn">
+      <http:operation location="/SetCustomerOn" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractList">
+      <http:operation location="/GetContractList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractDetail">
+      <http:operation location="/GetContractDetail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKindList">
+      <http:operation location="/GetKindList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeCategoryList">
+      <http:operation location="/GeCategoryList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientType">
+      <http:operation location="/GetClientType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTest">
+      <http:operation location="/GetDataTest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NewIWinService">
+    <wsdl:port name="NewIWinServiceSoap" binding="tns:NewIWinServiceSoap">
+      <soap:address location="http://newsport.yicai.com:8899/NewIWinService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NewIWinServiceSoap12" binding="tns:NewIWinServiceSoap12">
+      <soap12:address location="http://newsport.yicai.com:8899/NewIWinService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NewIWinServiceHttpGet" binding="tns:NewIWinServiceHttpGet">
+      <http:address location="http://newsport.yicai.com:8899/NewIWinService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NewIWinServiceHttpPost" binding="tns:NewIWinServiceHttpPost">
+      <http:address location="http://newsport.yicai.com:8899/NewIWinService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,66 @@
+﻿Log4Net在Web下使用说明:
+
+	1、添加对log4net.dll的引用
+
+	2、在Web.config文件的configuration节点下添加如下内容：
+	<configSections>
+		<section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler,log4net"/>
+	</configSections>
+
+	<log4net>
+	  <root>
+		<priority value="ALL"/>
+		<appender-ref ref="appenderName"/>
+	  </root>
+	  
+	  <appender name="appenderName" type="log4net.Appender.RollingFileAppender">
+	  </appender>
+	</log4net>
+
+	3、在Global.asax文件 的Application_Start()方法 下添加如下内容：
+	log4net.Config.XmlConfigurator.Configure(); --在这个应该程序域没有失效之前，这个配置不会重新去读日志记录的也不是自己想要的
+
+	4、在需要记日志的地方声明一个logger
+	private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+	或
+	private static readonly ILog log = LogManager.GetLogger(typeof(WebForm1));
+
+	之后就可以使用 log这个对象记录日志了；
+
+	方法二：
+
+	在app.config文件中configuration节点下添加如下内容
+	  <appSettings>
+		<add key="log4netConfig" value="E:\MyWork\Projects\LogModel\WindowsLog\log4net.config"/>
+	  </appSettings>
+	  
+	之后在程序启动时通过以下方法注册:
+	log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo(ConfigurationManager.AppSettings["log4netConfig"]));
+	这其实就是在当前程序中引入log4net的配置文件
+	
+	方法三：
+	
+	在程序集文件中添加
+	[assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config", Watch = true)]
+	这样，就可以读到log4net的配置信息，不用在web.config中引入log4net.config，但log4net.config要跟web.config在同一目录下
+	
+	&#xA; --空格
+	&#13;&#10; --换行
+	
+	
+	加载配置:
+	ConfigFile属性：当我们自己定义了一个log4net的配置文件时，可以通过这个属性来指定配置文件。
+	ConfigFileExtension属性：当应用程序会编译成不同扩展名称的程序集时，可以使用这个属性。如Sample程序将编译成Sample.exe，则ConfigFileExtension设置为“config”，那么所使用的配置文件名称为：Sample.exe.config。注意不能和ConfigFile属性同时使用。
+	Watch属性：在运行期间是否监测配置文件。当值为true时，FileSystemWatcher将用来监视配置文件的内容改变、重命名和删除通知。
+	 
+	为应用程序加载log4net的配置，可以通过在应用程序集中设置属性。
+	例如：
+	[assembly: log4net.Config.DOMConfigurator(ConfigFile="Sample.config")]
+	[assembly: log4net.Config.DOMConfigurator(ConfigFileExtension="config")]
+	也可以不使用任何参数，这时将使用应用程序的配置文件。
+	[assembly: log4net.Config.DOMConfigurator()]
+	 
+	另一种方式是在代码中使用 DOMConfigurator 类
+	log4net.Config.DOMConfigurator.Configure(
+	new FileInfo("log4net.config"));
+	使用ConfigureAndWatch(..)可以指定一个配置文件并且监视该文件的变化。

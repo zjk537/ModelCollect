@@ -1,0 +1,32 @@
+<串口配置>
+DDC_ID  COMM     BAUD      DATABIT    STOPBIT    PARITY    CNT_RESEND
+ 1       1       19200        8          2         n           3
+ 2       1       9600         8          1         o           5
+ 3       2       2400         7          2         e           6 
+<串口配置结束>
+
+<照明>
+
+<01 zm_101 大厅照明>
+DDC_ID  VARTYPE    FUNC       OFFSET       DESC         UNIT   POINT    0      1
+   1       1     01，05，15   0001     照明启停控制     NULL   NULL    启动   关闭
+   1       1     01，02       0002     照明运行状态     NULL   NULL    运行   停止
+   1       2     01，02       0011     照明手自动状态   NULL   NULL    自动   手动   
+   1       2     01，02       0012     照明故障状态     NULL   NULL    故障   正常
+
+<02 zm Desc>
+DDC_ID  VARTYPE    FUNC       OFFSET       DESC         UNIT   POINT    0      1
+   1      1     01，05，15    0010     照明启停控制     NULL   NULL    启动   关闭
+   1      2     01，02        0013     照明运行状态     NULL   NULL    运行   停止
+   2      2     01，02        0007     照明手自动状态   NULL   NULL    自动   手动
+   3      2     01，02        0008     照明故障状态     NULL   NULL    故障   正常
+<照明结束>
+
+<送排风>
+
+<02 spf_101 Desc>
+DDC_ID  VARTYPE    FUNC       OFFSET       DESC         UNIT   POINT    0      1      
+   2      1     01，05，15    0001       启停控制       NULL   NULL    启动   关闭
+   2      2     01，02        0002       运行状态       NULL   NULL    运行   停止
+   3      2     01，02        0005      手自动状态      NULL   NULL    自动   手动
+   3      2     01，02        0009       故障状态       NULL   NULL    故障   正常

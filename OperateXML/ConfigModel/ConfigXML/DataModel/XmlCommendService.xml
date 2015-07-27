@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XmlCommendService>
+  <BusinessTypes>
+    <BusinessType Name="BusinessType1">
+      <CommendServices>
+        <CommendService Guid="0101" Name="推荐业务0101" Enable="true"
+                        Description="【推荐业务0101】"
+                        LogoUrl="image/logo1.gif"/>
+        <CommendService Guid="0102" Name="推荐业务0102" Enable="true"
+                        Description="【推荐业务0102】"
+                        LogoUrl="image/logo1.gif"/>
+      </CommendServices>
+    </BusinessType>
+    <BusinessType Name="BusinessType2">
+      <CommendServices>
+        <CommendService Guid="0201" Name="推荐业务0201" Enable="true"
+                        Description="【推荐业务0201】"
+                        LogoUrl="image/logo1.gif"/>
+        <CommendService Guid="0202" Name="推荐业务0202" Enable="true"
+                        Description="【推荐业务0202】"
+                        LogoUrl="image/logo1.gif"/>
+      </CommendServices>
+    </BusinessType>
+  </BusinessTypes>
+</XmlCommendService>

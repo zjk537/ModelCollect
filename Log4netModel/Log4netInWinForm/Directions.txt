@@ -1,0 +1,46 @@
+﻿Log4Net在WinForm下使用说明:
+
+	1、首先添加项目对 log4net.dll 的引用
+
+方法一：
+
+	2、修改 项目中Properties\AssemblyInfo.cs文件，在文件最后加上
+
+	 如果想log4net系统会自动寻找配置文件App.config从而获得并加载其中的配置信息。
+	 [assembly: log4net.Config.DOMConfigurator()] 
+	  
+	  如果想log4net随时监视配置文件以便重新加载的话就 
+	  稍微麻烦点了要这样写：    
+	  [assembly:log4net.Config.DOMConfigurator(ConfigFile="filename",ConfigFileExtension="log4net",Watch=true)] 
+
+方法二：
+	3、添加配置文件App.config，并在configuration节点下添加
+	<configSections>
+		<section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler,log4net"/>
+	</configSections>
+
+	<log4net>
+	  <root>
+		<priority value="ALL"/>
+		<appender-ref ref="appenderName"/>
+	  </root>
+	  
+	  <appender name="appenderName" type="log4net.Appender.RollingFileAppender">
+	  </appender>
+	</log4net>
+
+	4、在要用的地方通过如下方式声明：
+	private static readonly ILog _log = LogManager.GetLogger(typeof(Form1));
+	或 通过获得当前方法所在的类的方式
+	private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+
+方法三：
+	在app.config文件中configuration节点下添加如下内容
+	  <appSettings>
+		<add key="log4netConfig" value="E:\MyWork\Projects\LogModel\WindowsLog\log4net.config"/>
+	  </appSettings>
+	  
+	之后在程序启动时通过以下方法注册:
+	log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo(ConfigurationManager.AppSettings["log4netConfig"]));
+	这其实就是在当前程序中引入log4net的配置文件

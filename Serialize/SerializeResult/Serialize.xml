@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClassToSerialize xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <id>100</id>
+  <name>zjk</name>
+  <sex>man</sex>
+  <MoblieNumber>13825200137</MoblieNumber>
+</ClassToSerialize>

@@ -1,0 +1,39 @@
+﻿在configModelUI层读取文件 PathServiceConfiguration文件的内容，并显示出来
+
+1、为什么PathServiceConfig 实例没有集合中提供的一些方法呢？
+
+	因为没有引入 System.Configuration.dll这个文件
+	
+2、为什么ConfigurationManager.GetSection("pathServiceConfig")这个不能打开configSource指定的文件呢？
+	无法打开 configSource 文件？
+	
+	因为 文件本身 PathServiceConfiguration.config 属性如果不允许复制，就不能打开，在VS中查看该文件的属性
+	设置属性【复制到输出目录】如果较新则复制
+	这样设置之后，该文件就会在调试时，自动复制到debug文件夹下
+
+3、为什么提示：configSource 文件的格式必须为包含节名的元素？
+
+	因为，Configuration读数据是按配置文件中的节点读的,所以以下几个地方要注意节点的配置：
+	一、app.config
+	
+	<?xml version="1.0" encoding="utf-8" ?>
+	<configuration>
+	  <configSections>
+		<section name="【PathServiceConfig】" type="ConfigModel.GetConfigCollection.PathServiceConfig,ConfigModel"/>
+	  </configSections>
+	  <【PathServiceConfig】 configSource="TestData\PathServiceConfiguration.config" />
+
+	</configuration>
+	
+	二、PathServiceConfiguration.config文件
+	<?xml version="1.0" encoding="utf-8" ?>
+	<【PathServiceConfig】 host="hostAddress">
+	  <PathMaps >
+		<PathMap name="标题1" source="源内容" destination="替换成的内容" />
+		<PathMap name="标题2" source="源内容" destination="替换成的内容" />
+	  </PathMaps>
+	</【PathServiceConfig】>
+	
+	三、类文件名：PathServiceConfig.cs
+	
+	这些地方要保持一致
